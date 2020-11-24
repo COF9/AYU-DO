@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "936319780444",
+    "firebase_url": "https://ayu-do.firebaseio.com",
+    "project_id": "ayu-do",
+    "storage_bucket": "ayu-do.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936319780444:android:9a1ab007d70923dd100899",
+        "android_client_info": {
+          "package_name": "com.example.ayu_do"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936319780444-b9etvgov2pdti1u4ad09u1t2hurldils.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeAMQfs19ZrSkgvrTlxsCzb8k1hASTaRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936319780444-b9etvgov2pdti1u4ad09u1t2hurldils.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
