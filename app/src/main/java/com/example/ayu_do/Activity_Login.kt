@@ -22,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 class Activity_Login : AppCompatActivity() {
 
     private val GOOGLE_SIGN_IN = 100
+
     private val callbackManager = CallbackManager.Factory.create()
 
     override fun onCreate(savedInstanceState: Bundle?) {
