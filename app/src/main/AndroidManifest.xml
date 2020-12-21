@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ayu_do">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Activity_Register"></activity>
+        <activity android:name=".ui.SignUpActivity"></activity>
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
@@ -20,8 +21,8 @@
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorTersary" />
 
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".Activity_Login">
+        <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,7 +52,7 @@
         </activity>
 
         <service
-            android:name=".MessagingService"
+            android:name=".services.MessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

@@ -1,17 +1,18 @@
-package com.example.ayu_do
+package com.example.ayu_do.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
+import com.example.ayu_do.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
-class Activity_Register : AppCompatActivity() {
+class SignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity__register)
+        setContentView(R.layout.activity_register)
         setup()
     }
     private fun setup(){
@@ -43,14 +44,14 @@ class Activity_Register : AppCompatActivity() {
     }
 
     private fun showHome(email: String){
-        val homeIntent=Intent(this,HomeActivity::class.java).apply {
+        val homeIntent=Intent(this, HomeActivity::class.java).apply {
             putExtra("email", email)
         }
         startActivity(homeIntent)
     }
 
     private fun showLogin(){
-            val loginIntent= Intent(this,Activity_Login::class.java)
+            val loginIntent= Intent(this, LoginActivity::class.java)
             startActivity(loginIntent)
     }
 }

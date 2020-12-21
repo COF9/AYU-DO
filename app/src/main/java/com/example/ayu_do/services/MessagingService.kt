@@ -1,4 +1,4 @@
-package com.example.ayu_do
+package com.example.ayu_do.services
 
 import com.google.firebase.messaging.FirebaseMessagingService
 

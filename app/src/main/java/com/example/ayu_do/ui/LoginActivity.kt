@@ -1,10 +1,12 @@
-package com.example.ayu_do
+package com.example.ayu_do.ui
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
+import com.example.ayu_do.R
+import com.example.ayu_do.constants.Constants.GOOGLE_SIGN_IN
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
@@ -19,9 +21,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_login.*
 
-class Activity_Login : AppCompatActivity() {
-
-    private val GOOGLE_SIGN_IN = 100
+class LoginActivity : AppCompatActivity() {
 
     private val callbackManager = CallbackManager.Factory.create()
 
@@ -29,12 +29,6 @@ class Activity_Login : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
-        //Analytics Event
-        val analytics = FirebaseAnalytics.getInstance(this)
-        val bundle = Bundle()
-        bundle.putString("messeage","Integracion de Firebase completa")
-        analytics.logEvent("InitScreen", bundle)
 
         //setup
         setup()
@@ -49,13 +43,15 @@ class Activity_Login : AppCompatActivity() {
             showHome(email)
         }
     }
+
     private fun setup(){
 
         singUpButton.setOnClickListener{
                         showSing()
         }
+
         loginButton.setOnClickListener{
-            if(emailText.text.isNotEmpty()&&passwordText.text.isNotEmpty()){
+            if(emailText.text.isNotEmpty() && passwordText.text.isNotEmpty()){
                 FirebaseAuth.getInstance()
                     .signInWithEmailAndPassword(emailText.text.toString(),
                         passwordText.text.toString()).addOnCompleteListener{
@@ -69,7 +65,9 @@ class Activity_Login : AppCompatActivity() {
         }
         googleButton.setOnClickListener{
             //Configuracion
-            val googleConf = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build()
+            val googleConf = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(
+                R.string.default_web_client_id
+            )).requestEmail().build()
             val googleClient = GoogleSignIn.getClient(this, googleConf)
             googleClient.signOut()
             startActivityForResult(googleClient.signInIntent, GOOGLE_SIGN_IN)
@@ -111,14 +109,14 @@ class Activity_Login : AppCompatActivity() {
     }
 
     private fun showHome(email: String){
-        val homeIntent=Intent(this,HomeActivity::class.java).apply {
+        val homeIntent=Intent(this, HomeActivity::class.java).apply {
             putExtra("email", email)
         }
         startActivity(homeIntent)
     }
 
     private fun showSing(){
-        val singIntent= Intent(this,Activity_Register::class.java)
+        val singIntent= Intent(this, SignUpActivity::class.java)
         startActivity(singIntent)
     }
 

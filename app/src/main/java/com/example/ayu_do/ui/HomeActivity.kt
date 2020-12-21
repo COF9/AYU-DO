@@ -1,8 +1,9 @@
-package com.example.ayu_do
+package com.example.ayu_do.ui
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.ayu_do.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_home.*
 
